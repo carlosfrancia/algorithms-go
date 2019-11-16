@@ -1,29 +1,56 @@
 package main
 
-// Complete the sockMerchant function below.
-func sockMerchant(n int32, ar []int32) int32 {
-	var result int32
-	socks := make(map[int32]int32)
+import (
+	"fmt"
+)
 
-	for _, value := range ar {
-		if socks[value] == 0 {
-			println("EMPTY")
-			socks[value] = 1
-		} else {
-			println("NOT EMPTY")
-			socks[value] = socks[value] + 1
+// Complete the checkMagazine function below.
+func checkMagazine(magazine []string, note []string) {
+
+	magazineMap := make(map[string]int)
+	noteMap := make(map[string]int)
+
+	for i := range magazine {
+		magazineMap[magazine[i]]++
+	}
+
+	for i := range note {
+		noteMap[note[i]]++
+	}
+	for word, count := range noteMap {
+		if count > magazineMap[word] {
+			fmt.Println("No")
+			break
 		}
 	}
-	for _, value := range socks {
-		result = result + value/2
 
+	// for i := range note {
+
+	// 	if !(magazineMap[note[i]]) {
+	// 		fmt.Print("No")
+	// 		return
+	// 	}
+	// 	magazineMap[note[i]] = false
+
+	// }
+	fmt.Println("Yes")
+}
+
+func printMap(myMap map[string]bool) {
+	for key, value := range myMap {
+		fmt.Println("Key: ", key, "Value: ", value)
 	}
-	return result
 }
 
 func main() {
 
-	result := sockMerchant(9, []int32{10, 20, 20, 10, 10, 30, 50, 10, 20})
-
-	println(result)
+	checkMagazine([]string{""}, []string{""})
 }
+
+// THIS FAILS:
+
+// 15 17
+// o l x imjaw bee khmla v o v o imjaw l khmla imjaw x
+// imjaw l khmla x imjaw o l l o khmla v bee o o imjaw imjaw
+
+// EXPECTED NO
