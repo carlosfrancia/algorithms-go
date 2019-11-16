@@ -4,39 +4,28 @@ import (
 	"fmt"
 )
 
-// Complete the checkMagazine function below.
-func checkMagazine(magazine []string, note []string) {
+// Complete the twoStrings function below.
+func twoStrings(s1 string, s2 string) string {
 
-	magazineMap := make(map[string]int)
-	noteMap := make(map[string]int)
+	mapS1 := make(map[rune]bool)
+	for _, letter := range s1 {
 
-	for i := range magazine {
-		magazineMap[magazine[i]]++
+		mapS1[letter] = true
 	}
+	mapS2 := make(map[rune]bool)
+	for _, letter := range s2 {
 
-	for i := range note {
-		noteMap[note[i]]++
+		mapS2[letter] = true
 	}
-	for word, count := range noteMap {
-		if count > magazineMap[word] {
-			fmt.Println("No")
-			break
+	for key := range mapS2 {
+		if mapS1[key] {
+			return ("YES")
 		}
 	}
-
-	// for i := range note {
-
-	// 	if !(magazineMap[note[i]]) {
-	// 		fmt.Print("No")
-	// 		return
-	// 	}
-	// 	magazineMap[note[i]] = false
-
-	// }
-	fmt.Println("Yes")
+	return ("NO")
 }
 
-func printMap(myMap map[string]bool) {
+func printMap2(myMap map[string]bool) {
 	for key, value := range myMap {
 		fmt.Println("Key: ", key, "Value: ", value)
 	}
@@ -44,7 +33,7 @@ func printMap(myMap map[string]bool) {
 
 func main() {
 
-	checkMagazine([]string{""}, []string{""})
+	fmt.Print(twoStrings("hi", "world"))
 }
 
 // THIS FAILS:
