@@ -25,13 +25,7 @@ func twoStrings(s1 string, s2 string) string {
 	return ("NO")
 }
 
-func printMap2(myMap map[string]bool) {
-	for key, value := range myMap {
-		fmt.Println("Key: ", key, "Value: ", value)
-	}
-}
-
-func main() {
+func main_ARRAY() {
 
 	fmt.Print(twoStrings("hi", "world"))
 }

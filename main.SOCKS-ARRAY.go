@@ -9,7 +9,7 @@ func sockMerchant(n int32, ar []int32) int32 {
 		if socks[value] == 0 {
 			socks[value] = 1
 		} else {
-			socks[value] = socks[value] + 1
+			socks[value]++
 		}
 	}
 	for _, value := range socks {
