@@ -28,7 +28,7 @@ func maxDifference(arr []int32) int32 {
 	return result
 }
 
-func main() {
+func main_MAX_DIFFERENCE() {
 
 	maxDifference([]int32{2, 3, 4})
 	c := 5 << 2
